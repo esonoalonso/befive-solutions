@@ -7,7 +7,7 @@ import { testimonials } from '@/lib/data'
 
 function Stars({ rating }) {
   return (
-    <div className="flex gap-0.5 text-accent">
+    <div className="flex gap-0.5 text-amber-400">
       {Array.from({ length: 5 }).map((_, i) => (
         <Star key={i} size={13} strokeWidth={0} fill={i < rating ? 'currentColor' : '#E7E9EC'} />
       ))}
