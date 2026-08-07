@@ -5,7 +5,7 @@ import { clientLogos } from '@/lib/data'
 
 function LogoCard({ logo }) {
   return (
-    <div className="flex h-24 w-44 shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-5 shadow-sm transition-all duration-300 hover:border-accent/40 hover:shadow-card">
+    <div className="flex h-16 w-28 shrink-0 items-center justify-center rounded-xl border border-border bg-white p-3 shadow-sm transition-all duration-300 hover:border-accent/40 hover:shadow-card sm:h-20 sm:w-36 sm:rounded-2xl sm:p-4 md:h-24 md:w-44 md:p-5">
       <img
         src={logo.image}
         alt={logo.name}
@@ -34,7 +34,7 @@ export default function LogoStrip() {
         }}
       >
         <div
-          className="flex w-max animate-marquee-left gap-6"
+          className="flex w-max animate-marquee-left gap-3 sm:gap-4 md:gap-6"
           style={{ animationPlayState: paused ? 'paused' : 'running' }}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}

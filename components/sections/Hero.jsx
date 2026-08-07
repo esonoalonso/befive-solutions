@@ -2,12 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
-import { hero } from '@/lib/data'
+import { hero, whatWeDo, whatsappHref } from '@/lib/data'
 
-const menuItems = ['Social Media', 'Web & Ecommerce', 'Gestión de RRSS', 'Branding', 'SEO & SEM', 'Automatización IA']
-const menuLoop = [...menuItems, ...menuItems]
+const menuItems = whatWeDo.items.map((item) => item.label)
+const menuHalf = Array(4).fill(menuItems).flat()
+const menuLoop = [...menuHalf, ...menuHalf]
 
 const easeOut = [0.22, 1, 0.36, 1]
+
+const BLUE_GRADIENT = 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #3B82F6 100%)'
 
 export default function Hero() {
   return (
@@ -58,7 +61,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: easeOut, delay: 0.3 }}
           className="mt-7 max-w-3xl text-4xl font-black leading-[0.95] tracking-tight drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)] md:text-7xl"
         >
-          <span className="block text-white">Impulsa tu negocio hacia</span>
+          <span className="block text-white">{hero.titleLine1}</span>
           <span
             className="animate-shiny block"
             style={{
@@ -72,7 +75,7 @@ export default function Hero() {
               filter: 'url(#c3-noise)',
             }}
           >
-            el futuro digital
+            {hero.titleLine2}
           </span>
         </motion.h1>
 
@@ -92,8 +95,9 @@ export default function Hero() {
           className="mt-9 flex flex-col items-center gap-4"
         >
           <a
-            href="#contacto"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#2563EB] px-8 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#1D4ED8] active:scale-[0.98]"
+            href={whatsappHref}
+            className="group inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium text-white shadow-[0_2px_12px_rgba(29,78,216,0.4)] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            style={{ backgroundImage: BLUE_GRADIENT }}
           >
             {hero.cta}
             <ChevronRight size={16} className="transition-transform duration-200 group-hover:translate-x-[1px]" />

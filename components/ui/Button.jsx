@@ -9,6 +9,7 @@ export default function Button({
   className = '',
   onClick,
   type,
+  style,
 }) {
   const base =
     'inline-flex items-center justify-center gap-2 rounded-pill px-7 py-3.5 text-[15px] font-medium transition-all duration-200 ease-out hover:scale-[1.02] active:scale-[0.99]'
@@ -17,6 +18,7 @@ export default function Button({
     primary: 'bg-accent text-white hover:bg-accent-hover shadow-[0_1px_2px_rgba(37,99,235,0.15)]',
     secondary: 'bg-transparent text-ink-primary border border-border hover:border-ink-primary/30 hover:bg-bg-secondary',
     dark: 'bg-ink-primary text-white hover:bg-black',
+    none: '',
   }
 
   const content = (
@@ -34,6 +36,7 @@ export default function Button({
         target={isExternal ? '_blank' : undefined}
         rel={isExternal ? 'noopener noreferrer' : undefined}
         className={`${base} ${variants[variant]} ${className}`}
+        style={style}
       >
         {content}
       </Link>
@@ -41,7 +44,7 @@ export default function Button({
   }
 
   return (
-    <button type={type || 'button'} onClick={onClick} className={`${base} ${variants[variant]} ${className}`}>
+    <button type={type || 'button'} onClick={onClick} className={`${base} ${variants[variant]} ${className}`} style={style}>
       {content}
     </button>
   )

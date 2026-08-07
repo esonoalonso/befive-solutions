@@ -19,8 +19,13 @@ function Card({ t }) {
   if (t.featured) {
     return (
       <div className="overflow-hidden rounded-md bg-ink-primary">
-        <img src={t.photo} alt={t.author} className="h-56 w-full object-cover" />
+        <img src={t.photo} alt={t.author} className="h-56 w-full object-cover object-top" />
         <div className="p-6">
+          {t.rating && (
+            <div className="mb-3">
+              <Stars rating={t.rating} />
+            </div>
+          )}
           <p className="text-sm leading-relaxed text-white">&ldquo;{t.quote}&rdquo;</p>
           <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
             <p className="text-sm font-semibold text-white">{t.author}</p>
@@ -36,7 +41,17 @@ function Card({ t }) {
     <div className="rounded-md border border-border bg-white p-6">
       <div className="flex items-center justify-between">
         <Quote className="text-accent" size={22} strokeWidth={1.5} />
-        <img src={t.avatar} alt={t.author} className="h-10 w-10 rounded-full object-cover" />
+        {t.avatar ? (
+          <img src={t.avatar} alt={t.author} className="h-10 w-10 rounded-full object-cover" />
+        ) : (
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft text-xs font-semibold text-accent">
+            {t.author
+              .split(' ')
+              .map((w) => w[0])
+              .slice(0, 2)
+              .join('')}
+          </span>
+        )}
       </div>
       <p className="mt-5 text-sm leading-relaxed text-ink-primary">&ldquo;{t.quote}&rdquo;</p>
       <div className="mt-5 border-t border-border pt-4">

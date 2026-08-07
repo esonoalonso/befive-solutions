@@ -7,6 +7,8 @@ import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import { nav } from '@/lib/data'
 
+const BLUE_GRADIENT = 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #3B82F6 100%)'
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -52,7 +54,12 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button href={nav.cta.href} className="!py-2.5 !px-5 !text-sm">
+            <Button
+              href={nav.cta.href}
+              variant="none"
+              className="!py-2.5 !px-5 !text-sm text-white shadow-[0_1px_6px_rgba(29,78,216,0.35)]"
+              style={{ backgroundImage: BLUE_GRADIENT }}
+            >
               {nav.cta.label}
             </Button>
           </div>
@@ -80,7 +87,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button href={nav.cta.href} className="mt-2 w-full" onClick={() => setOpen(false)}>
+            <Button
+              href={nav.cta.href}
+              variant="none"
+              className="mt-2 w-full text-white shadow-[0_1px_6px_rgba(29,78,216,0.35)]"
+              style={{ backgroundImage: BLUE_GRADIENT }}
+              onClick={() => setOpen(false)}
+            >
               {nav.cta.label}
             </Button>
           </div>

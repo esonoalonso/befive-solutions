@@ -18,7 +18,13 @@ export default function AboutIntro() {
           <img src={about.image} alt="Equipo Befive" className="aspect-[4/5] w-full rounded-lg object-cover" />
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-body-lg leading-relaxed text-ink-secondary">{about.bio}</p>
+          <div className="flex flex-col gap-4">
+            {about.bio.split('\n\n').map((paragraph, i) => (
+              <p key={i} className="font-poppins text-body-lg leading-relaxed text-ink-secondary">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </Reveal>
       </div>
     </Section>

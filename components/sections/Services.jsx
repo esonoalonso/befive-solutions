@@ -22,7 +22,10 @@ export default function Services() {
           return (
             <Reveal key={service.title} delay={(i % 3) * 0.08}>
               <Card hover className="h-full bg-white">
-                <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-accent-soft text-accent">
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-sm"
+                  style={{ backgroundColor: service.bg, color: service.color }}
+                >
                   <Icon size={22} strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-6 text-h3 text-ink-primary">{service.title}</h3>

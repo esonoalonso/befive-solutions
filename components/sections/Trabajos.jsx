@@ -19,48 +19,30 @@ function TrabajoCard({ project, index, total }) {
   return (
     <div
       ref={containerRef}
-      className="sticky h-[85vh]"
-      style={{ top: `calc(6rem + ${index * 28}px)` }}
+      className="sticky flex h-[75vh] items-center"
+      style={{ top: `calc(6rem + ${index * 20}px)` }}
     >
       <motion.div
         style={{ scale, transformOrigin: 'top center' }}
-        className="flex h-full flex-col gap-6 rounded-[40px] border-2 border-accent/20 bg-white p-4 shadow-card sm:gap-8 sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="flex w-full flex-col gap-6 rounded-[32px] border-2 border-accent/20 bg-white p-4 shadow-card sm:gap-8 sm:rounded-[40px] sm:p-6 md:rounded-[50px] md:p-8"
       >
         <div className="flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-6">
             <span className="text-6xl font-black text-ink-primary sm:text-7xl">{project.number}</span>
             <div>
               <p className="text-small uppercase tracking-widest text-ink-secondary">{project.category}</p>
-              <p className="mt-1 text-2xl font-bold text-ink-primary sm:text-3xl">{project.name}</p>
+              <p className="mt-1 text-2xl font-bold uppercase text-ink-primary sm:text-3xl">{project.name}</p>
             </div>
           </div>
-          <VerProyectoButton />
+          <VerProyectoButton href={project.link} />
         </div>
 
-        <div className="grid flex-1 grid-cols-[40%_60%] gap-3 sm:gap-4">
-          <div className="flex flex-col gap-3 sm:gap-4">
-            <img
-              src={project.images[0]}
-              alt=""
-              loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
-            />
-            <img
-              src={project.images[1]}
-              alt=""
-              loading="lazy"
-              className="w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
-            />
-          </div>
-          <img
-            src={project.images[2]}
-            alt={project.name}
-            loading="lazy"
-            className="h-full w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-          />
-        </div>
+        <img
+          src={project.image}
+          alt={project.name}
+          loading="lazy"
+          className="aspect-[1800/1040] w-full rounded-[24px] object-cover sm:rounded-[32px] md:rounded-[40px]"
+        />
       </motion.div>
     </div>
   )
@@ -81,7 +63,7 @@ export default function Trabajos() {
 
         <div className="mt-lg flex flex-col gap-8">
           {trabajos.map((project, i) => (
-            <TrabajoCard key={project.number} project={project} index={i} total={total} />
+            <TrabajoCard key={project.name} project={project} index={i} total={total} />
           ))}
         </div>
       </Container>

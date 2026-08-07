@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <img src={nav.logoImage} alt={nav.logo} className="h-8 w-auto" style={{ filter: 'brightness(0) invert(1)' }} />
             <p className="mt-3 max-w-xs text-sm text-white/50">
-              Diseño, tecnología y automatización con IA para marcas que quieren crecer de verdad.
+              Diseño, desarrollo y automatización con IA para negocios que quieren resultados, no solo una web bonita.
             </p>
           </div>
 

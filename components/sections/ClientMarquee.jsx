@@ -17,7 +17,7 @@ function Tile({ item }) {
       loading="lazy"
       width={420}
       height={270}
-      className="h-[270px] w-[420px] shrink-0 rounded-2xl border border-border object-cover"
+      className="h-[105px] w-[160px] shrink-0 rounded-xl border border-border object-cover sm:h-[170px] sm:w-[260px] sm:rounded-2xl md:h-[270px] md:w-[420px]"
     />
   )
 }
