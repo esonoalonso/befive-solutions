@@ -107,10 +107,7 @@ export default function Hero() {
       </section>
 
       <div className="relative z-10 h-10 overflow-hidden border-b border-t border-border bg-white/80 backdrop-blur-md">
-        <div
-          className="flex h-full animate-marquee-left items-center whitespace-nowrap"
-          style={{ animationDuration: '40s' }}
-        >
+        <div className="flex h-full animate-marquee-left items-center whitespace-nowrap [animation-duration:16s] sm:[animation-duration:24s] md:[animation-duration:40s]">
           {menuLoop.map((item, i) => (
             <span
               key={i}
