@@ -1,3 +1,7 @@
 export default function Eyebrow({ children, className = '' }) {
-  return <p className={`mb-4 text-small uppercase tracking-widest text-accent font-semibold ${className}`}>{children}</p>
+  return (
+    <p className={`mb-4 font-recoleta text-small uppercase tracking-widest text-accent font-semibold ${className}`}>
+      {children}
+    </p>
+  )
 }

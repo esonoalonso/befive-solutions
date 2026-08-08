@@ -2,7 +2,6 @@ import Hero from '@/components/sections/Hero'
 import ClientMarquee from '@/components/sections/ClientMarquee'
 import LogoStrip from '@/components/sections/LogoStrip'
 import WhyUs from '@/components/sections/WhyUs'
-import Services from '@/components/sections/Services'
 import Trabajos from '@/components/sections/Trabajos'
 import WhatWeDo from '@/components/sections/WhatWeDo'
 import Testimonials from '@/components/sections/Testimonials'
@@ -18,7 +17,6 @@ export default function HomePage() {
       <LogoStrip />
       <ClientMarquee />
       <WhyUs />
-      <Services />
       <Trabajos />
       <WhatWeDo />
       <Testimonials />

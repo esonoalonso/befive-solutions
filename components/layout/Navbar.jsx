@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
@@ -10,15 +11,21 @@ import { nav } from '@/lib/data'
 const BLUE_GRADIENT = 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #3B82F6 100%)'
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+  const hasDarkHero = pathname === '/'
+  const [scrolled, setScrolled] = useState(!hasDarkHero)
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
+    if (!hasDarkHero) {
+      setScrolled(true)
+      return
+    }
     const onScroll = () => setScrolled(window.scrollY > 24)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [hasDarkHero])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-5">
@@ -30,7 +37,7 @@ export default function Navbar() {
               : 'border-transparent bg-transparent'
           }`}
         >
-          <Link href="#top" className="flex items-center">
+          <Link href="/#top" className="flex items-center">
             <img
               src={nav.logoImage}
               alt={nav.logo}

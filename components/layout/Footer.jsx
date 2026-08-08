@@ -116,20 +116,28 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse items-start justify-between gap-4 border-t border-white/10 py-6 sm:flex-row sm:items-center">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-white/10 pt-6">
+          {footer.local.map((item) => (
+            <Link key={item.href} href={item.href} className="text-xs text-white/25 hover:text-white/50">
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex flex-col-reverse items-start justify-between gap-4 py-6 sm:flex-row sm:items-center">
           <p className="text-xs text-white/40">{footer.copyright}</p>
           <p className="flex items-center gap-2 text-xs text-white/40">
             <span>{footer.location}</span>
             <span>→</span>
             <span className="tabular-nums">{time}</span>
           </p>
-          <a
-            href="#top"
+          <Link
+            href="/#top"
             className="flex items-center gap-1.5 text-xs font-medium text-accent hover:text-white"
           >
             Volver arriba
             <ArrowUp size={13} />
-          </a>
+          </Link>
         </div>
 
         <div className="select-none overflow-hidden pb-6 pt-4 text-center leading-none">

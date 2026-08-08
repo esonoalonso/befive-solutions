@@ -10,7 +10,6 @@ export default function AboutIntro() {
       <BlurReveal className="text-center">
         <Eyebrow className="justify-center text-center">{about.eyebrow}</Eyebrow>
         <h2 className="text-h2 text-ink-primary">{about.title}</h2>
-        <p className="mt-2 text-body-lg text-ink-secondary">{about.subtitle}</p>
       </BlurReveal>
 
       <div className="mt-lg grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
@@ -20,7 +19,7 @@ export default function AboutIntro() {
         <Reveal delay={0.1}>
           <div className="flex flex-col gap-4">
             {about.bio.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="font-poppins text-body-lg leading-relaxed text-ink-secondary">
+              <p key={i} className="text-body-lg leading-relaxed text-ink-secondary">
                 {paragraph}
               </p>
             ))}

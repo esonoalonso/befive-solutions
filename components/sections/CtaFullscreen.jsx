@@ -7,7 +7,7 @@ export default function CtaFullscreen() {
   const ticker = Array.from({ length: 8 }).map(() => contact.email)
 
   return (
-    <section className="relative flex min-h-[70vh] flex-col overflow-hidden bg-ink-primary text-center">
+    <section id="contacto" className="relative flex min-h-[70vh] flex-col overflow-hidden bg-ink-primary text-center">
       <div className="overflow-hidden border-b border-white/10 py-3">
         <div className="flex w-max animate-marquee-left whitespace-nowrap">
           {[...ticker, ...ticker].map((email, i) => (
