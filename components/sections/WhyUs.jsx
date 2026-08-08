@@ -95,13 +95,10 @@ export default function WhyUs() {
 
         <Reveal delay={0.1}>
           <div className="relative h-full min-h-[220px] overflow-hidden rounded-md">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
+            <img
+              src={photoCard.image}
+              alt=""
               className="absolute inset-0 h-full w-full object-cover"
-              src={photoCard.video}
             />
           </div>
         </Reveal>
