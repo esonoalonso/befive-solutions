@@ -41,7 +41,7 @@ export default function WhyUs() {
                   <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
-              <p className="mt-3 text-sm text-ink-secondary">Trabajo con clientes en varios países</p>
+              <p className="mt-3 text-sm text-ink-secondary">Resultados para clientes en varios países</p>
             </div>
             <div className="mt-8 flex -space-x-3">
               {avatars.map((src, i) => (
