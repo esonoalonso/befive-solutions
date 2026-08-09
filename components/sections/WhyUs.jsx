@@ -1,10 +1,11 @@
-import { Star, Sparkles, Bot, Layers, MessageCircle } from 'lucide-react'
+import { Star, MessageCircle } from 'lucide-react'
 import Section from '@/components/ui/Section'
 import Eyebrow from '@/components/ui/Eyebrow'
 import BlurReveal from '@/components/ui/BlurReveal'
 import Reveal from '@/components/ui/Reveal'
 import Button from '@/components/ui/Button'
-import { stats, whyUs, testimonials, nav, whatsappHref } from '@/lib/data'
+import CountUp from '@/components/ui/CountUp'
+import { metricCard, whyUs, testimonials, nav, whatsappHref } from '@/lib/data'
 
 const avatars = testimonials.slice(0, 4).map((t) => t.avatar)
 const BLUE_GRADIENT = 'linear-gradient(135deg, #1E3A8A 0%, #2563EB 50%, #3B82F6 100%)'
@@ -21,15 +22,32 @@ export default function WhyUs() {
 
       <div className="mt-lg grid grid-cols-1 gap-5 md:grid-cols-3">
         <Reveal>
-          <div className="noise-bg relative h-full overflow-hidden rounded-md bg-ink-primary p-8">
-            <div className="relative grid grid-cols-2 gap-6">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-3xl font-bold text-white">{stat.value}</p>
-                  <p className="mt-2 text-xs leading-snug text-white/50">{stat.label}</p>
-                </div>
-              ))}
+          <div className="relative flex h-full min-h-[380px] flex-col items-center overflow-hidden rounded-md bg-ink-primary pt-10 text-center">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover opacity-50"
+              src={metricCard.video}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-ink-primary/60 via-ink-primary/50 to-ink-primary" />
+
+            <div className="relative z-10 px-6">
+              <CountUp
+                end={metricCard.value}
+                prefix={metricCard.prefix}
+                suffix={metricCard.suffix}
+                className="font-poppins text-5xl font-bold text-white"
+              />
+              <p className="font-poppins mt-2 text-base font-bold text-white/80">{metricCard.label}</p>
             </div>
+
+            <img
+              src={metricCard.image}
+              alt="Transacciones de clientes"
+              className="relative z-10 mt-8 w-[90%] rounded-t-lg border border-white/10 shadow-2xl"
+            />
           </div>
         </Reveal>
 
@@ -81,12 +99,12 @@ export default function WhyUs() {
               <p className="mt-1.5 text-xs leading-relaxed text-ink-secondary">{iconsCard.text}</p>
             </div>
             <div className="mt-6 flex flex-wrap gap-2.5">
-              {[Sparkles, Bot, Layers].map((Icon, i) => (
+              {iconsCard.icons.map((icon) => (
                 <span
-                  key={i}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-ink-primary text-white"
+                  key={icon}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-ink-primary p-2"
                 >
-                  <Icon size={16} strokeWidth={1.75} />
+                  <img src={icon} alt="" className="h-full w-full object-contain" />
                 </span>
               ))}
             </div>
