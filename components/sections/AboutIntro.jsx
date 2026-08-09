@@ -19,7 +19,7 @@ export default function AboutIntro() {
         <Reveal delay={0.1}>
           <div className="flex flex-col gap-4">
             {about.bio.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="text-body-lg leading-relaxed text-ink-secondary">
+              <p key={i} className="text-body leading-relaxed text-ink-secondary">
                 {paragraph}
               </p>
             ))}
