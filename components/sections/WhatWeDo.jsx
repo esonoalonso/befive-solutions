@@ -45,7 +45,7 @@ export default function WhatWeDo() {
   })
 
   return (
-    <Section>
+    <Section id="lo-que-hacemos">
       <div ref={containerRef} style={{ height: `${total * 90}vh` }} className="relative">
         <div className="sticky top-0 flex h-screen items-center">
           <div className="grid w-full grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
