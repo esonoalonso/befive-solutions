@@ -52,7 +52,7 @@ export default function Trabajos() {
   const total = trabajos.length
 
   return (
-    <section id="trabajos" className="relative -mt-10 z-10 rounded-t-[40px] bg-bg-primary pb-2xl pt-xl sm:-mt-12 sm:rounded-t-[50px] md:-mt-14 md:rounded-t-[60px]">
+    <section id="trabajos" className="relative -mt-10 z-10 rounded-t-[40px] bg-bg-primary pb-md pt-xl sm:-mt-12 sm:rounded-t-[50px] md:-mt-14 md:rounded-t-[60px]">
       <Container>
         <h2
           className="text-h2 bg-clip-text font-black uppercase leading-none tracking-tight text-transparent"
