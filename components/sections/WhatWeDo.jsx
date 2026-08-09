@@ -62,7 +62,7 @@ export default function WhatWeDo() {
             </div>
 
             <div>
-              <p className="mb-6 font-recoleta text-right text-small uppercase tracking-widest text-ink-secondary">
+              <p className="mb-6 font-recoleta text-right text-small uppercase tracking-widest text-accent">
                 {whatWeDo.eyebrow}
               </p>
               <div className="flex flex-col items-end gap-1 text-right">
