@@ -101,10 +101,12 @@ export default function WhyUs() {
             <div className="mt-6 flex flex-wrap gap-2.5">
               {iconsCard.icons.map((icon) => (
                 <span
-                  key={icon}
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-ink-primary p-2"
+                  key={icon.src}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full p-2 ${
+                    icon.bg === 'white' ? 'border border-border bg-white' : 'bg-ink-primary'
+                  }`}
                 >
-                  <img src={icon} alt="" className="h-full w-full object-contain" />
+                  <img src={icon.src} alt="" className="h-full w-full object-contain" />
                 </span>
               ))}
             </div>
