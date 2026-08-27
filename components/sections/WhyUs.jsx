@@ -37,6 +37,7 @@ export default function WhyUs() {
               <CountUp
                 end={metricCard.value}
                 decimals={metricCard.decimals}
+                duration={3}
                 prefix={metricCard.prefix}
                 suffix={metricCard.suffix}
                 className="font-poppins text-5xl font-bold text-white"

@@ -47,7 +47,7 @@ export default function WhatWeDo() {
   return (
     <Section id="lo-que-hacemos">
       <div ref={containerRef} style={{ height: `${total * 90}vh` }} className="relative">
-        <div className="sticky top-0 flex h-screen items-start pt-24">
+        <div className="sticky top-0 flex h-screen items-start pt-24 sm:pt-12">
           <div className="grid w-full grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-bg-secondary shadow-card">
               {whatWeDo.items.map((item, i) => (
