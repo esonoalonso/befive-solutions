@@ -36,6 +36,7 @@ export default function WhyUs() {
             <div className="relative z-10 px-6">
               <CountUp
                 end={metricCard.value}
+                decimals={metricCard.decimals}
                 prefix={metricCard.prefix}
                 suffix={metricCard.suffix}
                 className="font-poppins text-5xl font-bold text-white"
