@@ -38,7 +38,7 @@ module.exports = {
         body: ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
         'body-lg': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }],
         small: ['0.8125rem', { lineHeight: '1.4', fontWeight: '500', letterSpacing: '0.05em' }],
-        stack: ['clamp(1.5rem, 4vw, 3.5rem)', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '700' }],
+        stack: ['clamp(1.75rem, 4.4vw, 4rem)', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '700' }],
         wordmark: ['clamp(4rem, 16vw, 13rem)', { lineHeight: '0.85', letterSpacing: '-0.03em', fontWeight: '800' }],
       },
       spacing: {
