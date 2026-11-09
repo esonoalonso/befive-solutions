@@ -10,6 +10,7 @@ const recoleta = localFont({ src: './fonts/RecoletaAltSemiBold.otf', variable: '
 const poppins = Poppins({ subsets: ['latin'], weight: ['700'], variable: '--font-poppins' })
 
 export const metadata = {
+  metadataBase: new URL('https://www.befive.es'),
   title: 'Befive Solutions — Diseño, tecnología y automatización con IA',
   description:
     'Diseño, tecnología y automatización con IA para marcas que quieren crecer de verdad. Desarrollo web, ecommerce, branding, SEO y gestión de redes sociales.',
